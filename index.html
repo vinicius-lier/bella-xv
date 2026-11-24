@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bella XV · A Valsa da Rosa</title>
+  <meta name="description" content="Convite para os 15 anos da Bella. Toque a rosa e entre na história.">
+  <meta property="og:title" content="Bella XV · A Valsa da Rosa">
+  <meta property="og:description" content="Um conto de fadas está prestes a começar.">
+  <meta property="og:type" content="website">
+  <!-- A prévia do WhatsApp exige URL absoluta: o script preparar-publicacao.py troca estes
+       endereços pelo domínio real ao montar a pasta de publicação. -->
+  <meta property="og:url" content="https://vinicius-lier.github.io/bella-xv/">
+  <meta property="og:image" content="https://vinicius-lier.github.io/bella-xv/assets/og-bella-xv-noite.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bella XV · rosa sob a redoma iluminada por um feixe de luz">
+  <meta name="theme-color" content="#14213D">
+  <!-- Animações só entram com JavaScript ativo: sem ele, tudo aparece normalmente -->
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/valsa-abertura.webp">
+  <link rel="preload" as="image" href="assets/marca/bella-xv-noite.webp">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="portao">
+
+<a class="pular-conteudo" href="#debutante">Pular para o convite</a>
+<canvas class="poeira" aria-hidden="true"></canvas>
+
+<header class="topo">
+  <span class="progresso-leitura" aria-hidden="true"><i></i></span>
+  <button class="indice-btn" type="button" aria-expanded="false" aria-controls="indice" aria-label="Capítulos. Atual: Prólogo">
+    <img src="assets/marca/bella-xv-noite.webp" alt="" width="1100" height="696">
+    <span class="indice-txt"><small>Capítulos</small><b class="indice-atual">Prólogo</b></span>
+  </button>
+  <button class="som" type="button" aria-pressed="false" aria-label="Pausar música" hidden>
+    <span class="som-barras" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="som-txt">pausar</span>
+  </button>
+</header>
+
+<!-- Índice dos capítulos (abre pelo topo) -->
+<nav class="indice" id="indice" aria-label="Capítulos" hidden>
+  <button class="indice-fechar" type="button" data-fechar-indice>Fechar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  <ol>
+    <li><a href="#abertura"><small>Prólogo</small>A rosa</a></li>
+    <li><a href="#debutante"><small>Capítulo I</small>A Debutante</a></li>
+    <li><a href="#novo"><small>Capítulo II</small>Um Novo Capítulo</a></li>
+    <li><a href="#memorias"><small>Capítulo III</small>Momentos Encantados</a></li>
+    <li><a href="#baile"><small>Capítulo IV</small>O Grande Baile</a></li>
+    <li><a href="#convite"><small>Capítulo V</small>Você é Nosso Convidado</a></li>
+    <li><a href="#final"><small>Epílogo</small>Esperamos por Você!</a></li>
+  </ol>
+</nav>
+
+<!-- Haste da rosa: progresso dos capítulos (computador) -->
+<nav class="haste" aria-hidden="true">
+  <a href="#abertura" tabindex="-1" data-rotulo="A rosa"></a>
+  <a href="#debutante" tabindex="-1" data-rotulo="A Debutante"></a>
+  <a href="#novo" tabindex="-1" data-rotulo="Um Novo Capítulo"></a>
+  <a href="#memorias" tabindex="-1" data-rotulo="Momentos Encantados"></a>
+  <a href="#baile" tabindex="-1" data-rotulo="O Grande Baile"></a>
+  <a href="#convite" tabindex="-1" data-rotulo="Você é Nosso Convidado"></a>
+  <a href="#final" tabindex="-1" data-rotulo="Esperamos por Você!"></a>
+</nav>
+
+<main>
+
+  <!-- PRÓLOGO · a rosa recebe o feixe de luz -->
+  <section id="abertura" class="cap cap--abertura" aria-labelledby="titulo-abertura">
+    <div class="abertura-palco" aria-hidden="true">
+      <img class="abertura-eco" src="assets/img/valsa-abertura.webp" alt="">
+      <div class="abertura-quadro">
+        <img class="abertura-foto" src="assets/img/valsa-abertura.webp" alt="">
+        <span class="feixe"></span>
+        <span class="aura"></span>
+      </div>
+    </div>
+    <div class="abertura-texto">
+      <h1 id="titulo-abertura" class="marca-grande"><img src="assets/marca/bella-xv-noite.webp" alt="Bella XV" width="1100" height="696"></h1>
+      <p class="tagline">Um conto de fadas está prestes a começar</p>
+      <button class="botao botao--rosa" type="button" data-tocar><span class="botao-luz" aria-hidden="true"></span>Tocar a rosa</button>
+      <p class="nota">abre o convite · com música</p>
+      <button class="sem-som" type="button" data-sem-som>entrar sem som</button>
+    </div>
+    <!-- Depois de aberto (ou na volta ao convite): atalhos, sem ritual e sem música automática -->
+    <div class="abertura-atalhos" hidden>
+      <button class="seguir" type="button" data-ir="#debutante">Começar a história</button>
+      <button class="atalho-baile" type="button" data-ir="#baile">Local, data e confirmação</button>
+    </div>
+    <div class="video-camada" hidden>
+      <video playsinline muted preload="none" aria-label="Abertura em vídeo"></video>
+      <button class="pular" type="button">Pular</button>
+    </div>
+  </section>
+
+  <!-- I · A DEBUTANTE — retrato em tela cheia, texto no pé da imagem -->
+  <section id="debutante" class="cap cap--retrato" aria-labelledby="t-deb">
+    <figure class="cena" data-video="debutante">
+      <img data-src="assets/img/bella-dourado-entardecer.webp" alt="Bella de coroa e vestido dourado ao entardecer, olhando para baixo" width="738" height="1440" style="--foco: 50% 12%; --foco-d: 50% 20%">
+      <span class="feixe-cena" aria-hidden="true"></span>
+    </figure>
+    <div class="texto">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Capítulo I</p>
+      <h2 id="t-deb">A Debutante</h2>
+      <p class="frase">Autêntica, radiante e cheia de sonhos.</p>
+      <button class="seguir" type="button" data-ir="#novo">Virar a página</button>
+    </div>
+  </section>
+
+  <!-- II · UM NOVO CAPÍTULO — página de livro: texto em cima, foto em arco -->
+  <section id="novo" class="cap cap--pagina" aria-labelledby="t-novo">
+    <div class="texto texto--centro">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Capítulo II</p>
+      <h2 id="t-novo">Um Novo Capítulo</h2>
+      <p class="frase">Agora, escrevo uma nova história. E você faz parte dela.</p>
+    </div>
+    <figure class="cena cena--arco" data-video="novo">
+      <img data-src="assets/img/bella-vermelho-livro.webp" alt="Bella de vestido vermelho lendo um livro" width="738" height="1600" style="--foco: 50% 16%">
+      <span class="feixe-cena" aria-hidden="true"></span>
+    </figure>
+    <button class="seguir seguir--centro" type="button" data-ir="#memorias">Abrir as memórias</button>
+  </section>
+
+  <!-- III · MOMENTOS ENCANTADOS — filme de memórias -->
+  <section id="memorias" class="cap cap--memorias" aria-labelledby="t-mem">
+    <div class="texto texto--centro">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Capítulo III</p>
+      <h2 id="t-mem">Momentos Encantados</h2>
+      <p class="frase">Uma viagem pelas memórias inesquecíveis</p>
+    </div>
+    <div class="filme" tabindex="0" aria-label="Galeria de fotos da Bella. Deslize ou use as setas.">
+      <figure><img data-src="assets/img/bella-dourado-coroa-praca.webp" alt="Bella ajeitando a coroa na praça" width="738" height="1423" style="--foco: 50% 16%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-espelho.webp" alt="Bella diante de um espelho dourado com rosas vermelhas" width="720" height="1280" style="--foco: 55% 40%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-rio.webp" alt="Bella de vestido vermelho à beira do rio" width="1200" height="1600" style="--foco: 50% 25%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-praca.webp" alt="Bella de vestido vermelho sorrindo na praça, diante da igreja" width="1200" height="1600" style="--foco: 42% 55%"></figure>
+      <figure><img data-src="assets/img/bella-dourado-rosa-sorriso.webp" alt="Bella com uma rosa na mão, sorrindo na praça" width="738" height="1173" style="--foco: 50% 18%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-redoma.webp" alt="Bella segurando a rosa na redoma" width="1200" height="1600" style="--foco: 60% 35%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-coracao.webp" alt="Bella fazendo um coração com as mãos no jardim" width="1200" height="1600" style="--foco: 45% 35%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-sentada.webp" alt="Bella de coroa e vestido vermelho sentada no jardim" width="1200" height="1488" style="--foco: 74% 62%"></figure>
+      <figure><img data-src="assets/img/bella-dourado-olhar-praca.webp" alt="Bella olhando para baixo, de vestido dourado" width="672" height="1101" style="--foco: 50% 20%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-fachada.webp" alt="Bella de vestido vermelho diante de um casarão histórico" width="1200" height="1600" style="--foco: 50% 60%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-lago.webp" alt="Bella de vestido vermelho diante do lago e das montanhas" width="1200" height="1600" style="--foco: 50% 60%"></figure>
+      <figure><img data-src="assets/img/bella-vermelho-jardim.webp" alt="Bella de vestido vermelho no jardim" width="1070" height="1470" style="--foco: 50% 22%"></figure>
+    </div>
+    <div class="filme-controles">
+      <button type="button" class="seta" data-filme="-1" aria-label="Foto anterior">‹</button>
+      <span class="filme-contador" aria-live="polite"><b>01</b> / 12</span>
+      <button type="button" class="seta" data-filme="1" aria-label="Próxima foto">›</button>
+    </div>
+    <button class="seguir seguir--centro" type="button" data-ir="#baile">Seguir para o baile</button>
+  </section>
+
+  <!-- IV · O GRANDE BAILE — informação em primeiro lugar -->
+  <section id="baile" class="cap cap--baile" aria-labelledby="t-baile">
+    <figure class="cena cena--fundo" aria-hidden="true">
+      <img data-src="assets/img/valsa-baile.webp" alt="" width="1080" height="1924" style="--foco: 50% 30%">
+    </figure>
+    <div class="texto texto--baile">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Capítulo IV</p>
+      <h2 id="t-baile">O Grande Baile</h2>
+
+      <p class="quando"><strong data-quando></strong><span class="hora">às <b data-evento="horario"></b></span></p>
+
+      <div class="contagem" role="timer" hidden aria-label="Contagem regressiva para o baile">
+        <div><strong data-cd="d">00</strong><span>dias</span></div>
+        <div><strong data-cd="h">00</strong><span>horas</span></div>
+        <div><strong data-cd="m">00</strong><span>min</span></div>
+        <div><strong data-cd="s">00</strong><span>seg</span></div>
+      </div>
+
+      <div class="onde">
+        <p class="rotulo-info">Onde</p>
+        <p class="local" data-evento="local"></p>
+        <p class="endereco"><span data-evento="endereco"></span><span class="cidade" data-evento="cidade"></span></p>
+        <a class="botao botao--claro botao--mapa" data-maps target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+          Abrir no mapa
+        </a>
+      </div>
+
+      <dl class="recados">
+        <div data-linha="traje"><dt>Traje</dt><dd data-evento="traje"></dd></div>
+        <div data-linha="presente"><dt>Sugestão de presente</dt><dd data-evento="presente"></dd></div>
+      </dl>
+
+      <p class="prazo prazo--baile" hidden></p>
+      <button class="botao botao--rosa botao--inteiro" type="button" data-ir="#convite .texto"><span class="botao-luz" aria-hidden="true"></span>Confirmar presença</button>
+    </div>
+  </section>
+
+  <!-- V · CONFIRMAÇÃO — foto inteira no alto, formulário abaixo -->
+  <section id="convite" class="cap cap--convite" aria-labelledby="t-conv">
+    <figure class="cena" data-video="convite">
+      <img data-src="assets/img/bella-dourado-cavalo.webp" alt="Bella de vestido dourado montada num cavalo branco" width="627" height="1285" style="--foco: 50% 18%">
+      <span class="feixe-cena" aria-hidden="true"></span>
+    </figure>
+    <div class="texto">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Capítulo V</p>
+      <h2 id="t-conv">Você é Nosso Convidado</h2>
+      <p class="frase">Sua presença tornará esta noite ainda mais especial.</p>
+      <p class="prazo" hidden></p>
+
+      <form class="rsvp" novalidate aria-label="Confirmação de presença">
+        <div class="campo" data-campo="nome">
+          <label for="r-nome">Seu nome completo</label>
+          <input id="r-nome" name="nome" autocomplete="name" autocapitalize="words" enterkeyhint="next" required aria-describedby="e-nome">
+          <p class="erro" id="e-nome"></p>
+        </div>
+        <fieldset class="campo" data-campo="presenca" aria-describedby="e-presenca">
+          <legend>Você poderá vir?</legend>
+          <div class="escolhas">
+            <label class="escolha"><input type="radio" name="presenca" value="sim" required><span>Sim, estarei presente</span></label>
+            <label class="escolha"><input type="radio" name="presenca" value="nao"><span>Não poderei comparecer</span></label>
+          </div>
+          <p class="erro" id="e-presenca"></p>
+        </fieldset>
+        <div class="campo" data-campo="acompanhantes" hidden>
+          <span class="rotulo" id="r-acomp-rotulo">Acompanhantes</span>
+          <div class="contador" role="group" aria-labelledby="r-acomp-rotulo">
+            <button type="button" class="contador-btn" data-acomp="-1" aria-label="Menos um acompanhante">−</button>
+            <output id="r-acomp" name="acompanhantes" aria-live="polite">0</output>
+            <button type="button" class="contador-btn" data-acomp="1" aria-label="Mais um acompanhante">+</button>
+          </div>
+          <p class="ajuda">Pessoas que virão com você, sem contar você.</p>
+        </div>
+        <div class="campo" data-campo="nomes" hidden>
+          <span class="rotulo">Nome dos acompanhantes</span>
+          <div class="nomes-lista"></div>
+          <p class="erro" id="e-nomes"></p>
+        </div>
+        <div class="campo" data-campo="recado">
+          <label for="r-recado">Recado para a Bella <span class="opcional">opcional</span></label>
+          <textarea id="r-recado" name="recado" rows="3" maxlength="400"></textarea>
+        </div>
+        <input class="pote" type="text" name="_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="como-envia" hidden></p>
+        <button class="botao botao--rosa botao--inteiro" type="submit" data-enviar><span class="botao-luz" aria-hidden="true"></span><span class="enviar-rotulo">Enviar confirmação</span></button>
+        <div class="estado" role="status" aria-live="polite"></div>
+      </form>
+
+      <a class="contato" data-contato target="_blank" rel="noopener" hidden>Dúvidas? Fale com a família pelo WhatsApp</a>
+      <button class="seguir" type="button" data-ir="#final">Ver o final</button>
+    </div>
+  </section>
+
+  <!-- EPÍLOGO · encerramento e créditos -->
+  <section id="final" class="cap cap--final" aria-labelledby="t-final">
+    <div class="texto texto--centro">
+      <span class="petala-guia" aria-hidden="true"></span>
+      <p class="cap-num">Epílogo</p>
+      <h2 id="t-final" class="h2-grande">Esperamos por Você!</h2>
+      <p class="citacao">Que este seja o início de muitos capítulos incríveis.</p>
+    </div>
+    <figure class="cena cena--larga" data-video="final">
+      <img data-src="assets/img/bella-dourado-deitada.webp" alt="Bella deitada sobre cetim dourado entre rosas vermelhas" width="672" height="1340" style="--foco: 50% 42%">
+      <span class="feixe-cena" aria-hidden="true"></span>
+    </figure>
+  </section>
+
+  <section class="cap cap--creditos" aria-label="Créditos">
+    <figure class="cena">
+      <img data-src="assets/img/bella-vermelho-15.webp" alt="Bella de vestido vermelho segurando balões dourados com o número 15" width="900" height="1600" style="--foco: 50% 26%">
+    </figure>
+    <div class="texto texto--centro">
+      <img class="marca-creditos" src="assets/marca/bella-xv-noite.webp" alt="Bella XV" loading="lazy" width="1100" height="696">
+      <p class="frase">Obrigada por fazer parte desta história!</p>
+      <button class="seguir seguir--centro" type="button" data-ir="#abertura">Rever a história</button>
+      <p class="rodape"><span data-evento="cidade"></span></p>
+    </div>
+  </section>
+
+</main>
+
+<audio class="trilha" preload="none" loop></audio>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
