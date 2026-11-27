@@ -311,6 +311,12 @@
 
   /* ── Confirmação de presença ──────────────────────────────────────────── */
   const R = V.rsvp || {};
+  // Destino "link": os botões abrem a página externa de confirmação e o formulário some
+  if (R.destino === "link" && /^https:\/\//.test(R.link || "")) {
+    $$("[data-rsvp-link]").forEach((a) => { a.href = R.link; a.hidden = false; });
+    $$("[data-rsvp-rolar]").forEach((b) => b.remove());
+    $(".rsvp").hidden = true;
+  }
   const form = $(".rsvp"), estado = $(".estado", form), lista = $(".nomes-lista", form), saida = $("#r-acomp");
   const campo = (n) => $(`[data-campo="${n}"]`, form);
   const maxAc = Math.max(0, Number(R.maxAcompanhantes ?? 5));

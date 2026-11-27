@@ -13,19 +13,21 @@ window.VALSA = {
     cidade: "Angra dos Reis · RJ",
     // Busca montada a partir do endereço. Se tiver o link exato (Maps → Compartilhar), cole aqui.
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua%20Maria%20Sabino%20de%20Almeida%2C%20Bracu%C3%AD%2C%20Angra%20dos%20Reis%20-%20RJ",
-    prazoConfirmacao: "até 5 de dezembro",
+    prazoConfirmacao: "até 1º de dezembro",
     traje: "Pedimos que não usem vermelho nem dourado.",
     presente: "Maquiagem, calça 38, calçado 37/38, camisa ou vestido M.",
     contato: "5524998383097", // WhatsApp da família (só dígitos). Vazio = sem botão de contato.
   },
 
   /* Confirmação de presença. Escolha UM destino:
+       "link"       → os botões "Confirmar presença" abrem a página externa em `link` (o formulário some)
        "whatsapp"   → abre o WhatsApp da família com a resposta pronta (o convidado toca em Enviar)
        "email"      → envia ao e-mail abaixo via FormSubmit (o 1º envio pede ativação no e-mail)
        "formulario" → envia JSON a um serviço próprio (Formspree, Google Apps Script etc.)
      Destino vazio ou incompleto: o formulário avisa que NÃO enviou. */
   rsvp: {
-    destino: "whatsapp",
+    destino: "link",
+    link: "https://assessoriavip.com.br/rsvpUnico/5138ca10df5011f1ae604f6afd42d3ad", // confirmação da assessoria
     whatsapp: "",   // vazio = usa evento.contato
     email: "",      // ainda não informado
     endpoint: "",
